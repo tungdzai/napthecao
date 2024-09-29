@@ -108,7 +108,23 @@ async function luckyDraw(phoneNumber, content) {
         "code": content
     }
     try {
-        const response = await axios.post('https://khuyenmai.mihaohao.vn/v1/prize-codes/lucky-draw', data);
+        const response = await axios.post('https://khuyenmai.mihaohao.vn/v1/prize-codes/lucky-draw', data, {
+            headers: {
+                'sec-ch-ua-platform': "Windows",
+                'Authorization': '',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+                'Accept': 'application/json; charset=utf-8',
+                'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+                'Content-Type': 'application/json',
+                'sec-ch-ua-mobile': '?0',
+                'Sec-Fetch-Site': 'same-origin',
+                'Sec-Fetch-Mode': 'cors',
+                'Sec-Fetch-Dest': 'empty',
+                'Host': 'khuyenmai.mihaohao.vn'
+            },
+            httpAgent: agent,
+            httpsAgent: agent
+        });
         return response.data;
 
     } catch (error) {
@@ -129,7 +145,23 @@ async function payments(phoneNumber, code, amount) {
     }
 
     try {
-        const response = await axios.post('https://khuyenmai.mihaohao.vn/v1/payments/multi-channel', data);
+        const response = await axios.post('https://khuyenmai.mihaohao.vn/v1/payments/multi-channel', data, {
+            headers: {
+                'sec-ch-ua-platform': "Windows",
+                'Authorization': '',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+                'Accept': 'application/json; charset=utf-8',
+                'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+                'Content-Type': 'application/json',
+                'sec-ch-ua-mobile': '?0',
+                'Sec-Fetch-Site': 'same-origin',
+                'Sec-Fetch-Mode': 'cors',
+                'Sec-Fetch-Dest': 'empty',
+                'Host': 'khuyenmai.mihaohao.vn'
+            },
+            httpAgent: agent,
+            httpsAgent: agent
+        });
         return response.data;
 
     } catch (error) {
